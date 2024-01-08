@@ -296,6 +296,23 @@ public class COTSTalonFXSwerveConstants {
                 return new COTSTalonFXSwerveConstants(wheelDiameter, angleGearRatio, driveGearRatio, angleKP, angleKI, angleKD, driveMotorInvert, angleMotorInvert, cancoderInvert);
             }
 
+            /** Swerve Drive Specialties - MK4i Module (REV NEO)*/
+            public static final COTSTalonFXSwerveConstants Neo(double driveGearRatio) {
+                double wheelDiameter = Units.inchesToMeters(4.0);
+        
+                /** (150 / 7) : 1 */
+                double angleGearRatio = ((150.0 / 7.0) / 1.0);
+        
+                double angleKP = 1.0;
+                double angleKI = 0.0;
+                double angleKD = 0.0;
+        
+                InvertedValue driveMotorInvert = InvertedValue.CounterClockwise_Positive;
+                InvertedValue angleMotorInvert = InvertedValue.Clockwise_Positive;
+                SensorDirectionValue cancoderInvert = SensorDirectionValue.CounterClockwise_Positive;
+                return new COTSTalonFXSwerveConstants(wheelDiameter, angleGearRatio, driveGearRatio, angleKP, angleKI, angleKD, driveMotorInvert, angleMotorInvert, cancoderInvert);
+            }
+
             public static final class driveRatios{
                 /** SDS MK4i - (8.14 : 1) */
                 public static final double L1 = (8.14 / 1.0);
